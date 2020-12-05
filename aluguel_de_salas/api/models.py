@@ -7,7 +7,7 @@ class Customer(models.Model):
     birthday = models.DateField()
     phone = models.CharField(max_length=40)
     email = models.EmailField(unique=True)
-    comments = models.TextField()
+    comments = models.TextField(blank=True)
     created_at = models.DateTimeField(auto_now_add=True,  editable=False)
     updated_at = models.DateTimeField(auto_now=True,  editable=False)
 
@@ -20,7 +20,7 @@ class Room(models.Model):
     capacity = models.PositiveIntegerField()
     description = models.TextField()
     price = models.FloatField()
-    comments = models.TextField()
+    comments = models.TextField(blank=True)
     created_at = models.DateTimeField(auto_now_add=True,  editable=False)
     updated_at = models.DateTimeField(auto_now=True,  editable=False)
 
@@ -33,6 +33,6 @@ class Rent(models.Model):
     value = models.FloatField()
     start = models.DateField()
     end = models.DateField()
-    comments = models.TextField()
+    comments = models.TextField(blank=True)
     created_at = models.DateTimeField(auto_now_add=True,  editable=False)
     updated_at = models.DateTimeField(auto_now=True,  editable=False)
