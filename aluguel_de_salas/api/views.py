@@ -16,3 +16,7 @@ class RentViewSet(viewsets.ModelViewSet):
     queryset = models.Rent.objects.all().order_by('-created_at')
     serializer_class = serializers.RentSerializer
     permission_classes = [permissions.IsAuthenticated]
+    filterset_fields = {
+        'start': ['lte'],
+        'end': ['gte'],
+    }
