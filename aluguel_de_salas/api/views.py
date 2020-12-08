@@ -6,6 +6,7 @@ class CustomerViewSet(viewsets.ModelViewSet):
     queryset = models.Customer.objects.all().order_by('-created_at')
     serializer_class = serializers.CustomerSerializer
     permission_classes = [permissions.IsAuthenticated]
+    filterset_fields = ['cpf']
 
 class RoomViewSet(viewsets.ModelViewSet):
     queryset = models.Room.objects.all().order_by('-created_at')

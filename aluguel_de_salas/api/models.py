@@ -14,6 +14,9 @@ class Customer(models.Model):
     def __str__(self) -> str:
         return self.name
 
+    class Meta:
+        verbose_name = 'Customer'
+
 class Room(models.Model):
     name = models.CharField(max_length=255)
     size = models.PositiveIntegerField()
@@ -27,6 +30,9 @@ class Room(models.Model):
     def __str__(self) -> str:
         return self.name
 
+    class Meta:
+        verbose_name = 'Room'
+
 class Rent(models.Model):
     customer = models.ForeignKey(Customer, models.CASCADE)
     room = models.ForeignKey(Room, models.CASCADE)
@@ -36,3 +42,6 @@ class Rent(models.Model):
     comments = models.TextField(blank=True)
     created_at = models.DateTimeField(auto_now_add=True,  editable=False)
     updated_at = models.DateTimeField(auto_now=True,  editable=False)
+
+    class Meta:
+        verbose_name = 'Rent'
