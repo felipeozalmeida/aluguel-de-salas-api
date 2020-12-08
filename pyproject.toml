@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "aluguel_de_salas"
-version = "0.2.0"
+version = "0.6.0"
 description = ""
 authors = ["Felipe Almeida <felipeortalmeida@gmail.com>"]
 license = "MIT"
